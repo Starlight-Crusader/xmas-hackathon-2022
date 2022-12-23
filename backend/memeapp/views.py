@@ -11,6 +11,6 @@ class GetMeme(generics.ListAPIView):
 
         return data[:1]
 
-class CreateMeme(generics.ListCreateAPIView):
+class MemeList(generics.ListCreateAPIView):
     queryset = models.Meme.objects.all()
     serializer_class = serializers.MemeSerializer
