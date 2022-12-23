@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
+import {querySlice} from '../slices/querySlice'
 
 export const store = configureStore({
     reducer: {
-      // posts: postsReducer,
-      // comments: commentsReducer,
-      // users: usersReducer,
+      query: querySlice.reducer,
     },
   })
   
