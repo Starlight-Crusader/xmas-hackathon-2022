@@ -16,17 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from parse import views
+from parseapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include([
-<<<<<<< HEAD
-        path('quizzes/', include('quizzes.urls'))
-    ]))
-=======
-        path('users/', include('users.urls'))
-    ])),
-    path('parser/', views.parse_command)
->>>>>>> 2415ddbac93b1075a59ff5f52feed3ffb58e2717
+        path('quizzes/', include('quizzes.urls')),
+        path('parse/', views.parse_command),
+    ])
 ]

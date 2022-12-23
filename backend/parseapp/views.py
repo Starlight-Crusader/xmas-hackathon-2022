@@ -4,7 +4,6 @@ from rest_framework import generics, status, response
 from rest_framework.decorators import api_view
 from parse import serializers
 
-
 @api_view(['POST'])
 def parse_command(request):
     serializer = serializers.RequestSerializer(data=request.data)
