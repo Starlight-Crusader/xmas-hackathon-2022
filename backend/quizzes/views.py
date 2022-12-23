@@ -9,10 +9,9 @@ class GetQuestions(generics.ListAPIView):
     serializer_class = QuestionSerializer
 
     def get_queryset(self):
-        data = models.Question.objects.all()
-        random.shuffle(data)
-
         n = int(self.request.query_params.get('n'))
+
+        data = models.Question.objects.all().order_by('?')
 
         return data[:n]
 
