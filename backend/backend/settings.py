@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'quizzes',
     'parseapp',
-    'memeapp'
+    'memeapp',
+    'students'
 ]
 
 MIDDLEWARE = [
@@ -130,4 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS
 
-CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS = [
+     "http://127.0.0.1:5173"
+]

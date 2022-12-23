@@ -23,6 +23,7 @@ urlpatterns = [
     path('api/', include([
         path('quizzes/', include('quizzes.urls')),
         path('parseapp/', include('parseapp.urls')),
-        path('memeapp/', include('memeapp.urls'))
+        path('memeapp/', include('memeapp.urls')),
+        path('students/', include('students.urls'))
     ]))
 ]
