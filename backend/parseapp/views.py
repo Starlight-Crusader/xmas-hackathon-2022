@@ -4,7 +4,7 @@ from rest_framework import generics, status, response
 from rest_framework.decorators import api_view
 from parseapp import serializers
 
-@api_view(['POST'])
+@api_view(['GET'])
 def parse_command(request):
     serializer = serializers.RequestSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -12,9 +12,11 @@ def parse_command(request):
     try:
         command = serializer.data['command']
         tokens = word_tokenize(command)
+        print(tokens)
 
         if tokens[0] != 'vdov':
             return response.Response('Invalid shell command', status=status.HTTP_400_BAD_REQUEST)
+        
         if tokens[1] == 'help':
             return response.Response('api/help', status=status.HTTP_200_OK)
         elif tokens[1] == 'quiz':
