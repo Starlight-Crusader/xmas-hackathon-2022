@@ -3,40 +3,47 @@
     min-height: 100vh;
     align-items: left;
     justify-content: left;
-    background-color: grey;
+    background-color: rgb(82, 64, 64);
 }
 
 .Main{
-    padding-top: 50px;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 80px;
     padding-bottom: 50px;
     padding-left: 50px;
     padding-right: 50px;
+    
 }
 .FormInput{
-    border: 1px solid white;
+    border: 2px solid white;
+    color: white;
     border-radius: 10px;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    color: black;
-    width: 700px;
+    /* padding: 0.5rem; */
+    margin-top: 60px;
+    background-color: black;
+    width: 100%;
+    height: 40px;
     padding-left: 50px;
 }
 
 .OutWin{
-    border: 1px solid grey;
+    border: 2px solid white;
     border-radius: 10px;
-    background-color: white;
-    width: 700px;
-    height: 700px;
-    margin-right: 20px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 400px;
+    /* margin-right: 20px; */
 }
 
 .FotoPlace{
-    border:1 px dolid grey;
+    border: 2px solid white;
     border-radius: 10px;
-    background-color: white;
-    width: 500px;
-    height: 500px;
-    padding-top: 300px;
-    padding-bottom: 300px;
+    background-color: black;
+    width: 100%;
+    height: 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    /* margin-left: 50px; */
 }
