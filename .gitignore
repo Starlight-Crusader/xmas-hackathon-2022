@@ -29,3 +29,6 @@ media
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/ui
+
+# virtual env
+.venv
