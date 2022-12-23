@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include([
         path('quizzes/', include('quizzes.urls')),
-        path('parseapp/', include('parseapp.urls'))
+        path('parseapp/', include('parseapp.urls')),
+        path('memeapp/', include('memeapp.urls'))
     ]))
 ]

@@ -5,7 +5,7 @@ from memeapp import models, serializers
 class GetMeme(generics.ListAPIView):
     serializer_class = serializers.MemeSerializer
 
-    def get_meme(self):
+    def get_queryset(self):
         t = self.request.query_params.get('topic')
         data = models.Meme.objects.filter(topic=t)
 
