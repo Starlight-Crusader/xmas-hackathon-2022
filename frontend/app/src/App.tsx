@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
+import './pages/Main/Main.css'
+import { Main } from './pages/Main/Main'
 
 function App() {
 
   return (
     <div className="App">
-      <p style={{fontFamily: "Ubuntu Mono"}}> Hello World</p>
+      <Main/>
     </div>
   )
 }
