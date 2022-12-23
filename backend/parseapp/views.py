@@ -32,7 +32,7 @@ def parse_command(request):
             else:
                 meme_topic = 'default'
 
-            return response.Response('api/memeapp?topic=' + meme_topic, status=status.HTTP_200_OK)
+            return response.Response('api/memeapp/getmeme?topic=' + meme_topic, status=status.HTTP_200_OK)
         elif tokens[1] == 'students':
             if len(tokens) <= 2:
                 return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
