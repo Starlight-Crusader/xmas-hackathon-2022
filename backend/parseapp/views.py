@@ -14,20 +14,24 @@ def parse_command(request):
         tokens = word_tokenize(commans)
 
         if tokens[0] != 'vdov':
-            return response.Response('Invalid shell command')
+            return response.Response('Invalid shell command', status=status.HTTP_400_BAD_REQUEST)
         if tokens[1] == 'help':
-            return HttpResponse('')
+            return response.Response('api/help', status=status.HTTP_200_OK)
         elif tokens[1] == 'quiz':
             if len(tokens) > 2:
-                number_of_questions = int(tokens[2])
-                return HttpResponse('')
+                number_of_questions = tokens[2]
+            else:
+                number_of_questions = str(10)
 
-            return HttpResponse('')
+            return response.Response('api/quizzes/n=' + number_of_questions, status=status.HTTP_200_OK)
         elif tokens[1] == 'meme':
             if len(tokens) > 2:
                 meme_topic = tokens[2]
-            return HttpResponse('')
+            else:
+                meme_topic = 'default'
+
+            return response.Response('api/memeapp/topic=' + meme_topic, status=status.HTTP_200_OK)
         else:
-            return HttpResponse('Invalid second argument')
+            return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
     except:
          return response.Response('Something went wrong', status=status.HTTP_500_INTERNAL_SERVER_ERROR)
