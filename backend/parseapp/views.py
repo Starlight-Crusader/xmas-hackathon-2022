@@ -36,14 +36,20 @@ def parse_command(request):
         elif tokens[1] == 'students':
             if len(tokens) <= 2:
                 return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
-            if tokens[2] in ['-add', '-delete']:
+            if tokens[2] == '-add':
                 if len(tokens) > 3:
                     student_name = tokens[4]
-                    return response.Response('api/students/name=' + student_name, status=status.HTTP_200_OK)
                 else:
                     return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
-            elif tokens[2] == '-killist':        
-                return response.Response('api/students/getstudents', status=status.HTTP_200_OK)
+                return response.Response('api/students/create/name=' + student_name, status=status.HTTP_200_OK)
+            elif tokens[2] == '-delete':
+                if len(tokens) > 3:
+                    student_name = tokens[4]
+                else:
+                    return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
+                return response.Response('api/students/delete/name=' + student_name, status=status.HTTP_200_OK)
+            elif tokens[2] == '-killist':
+                return response.Response('api/students/list/', status=status.HTTP_200_OK)
 
         else:
             return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
