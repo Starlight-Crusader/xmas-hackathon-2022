@@ -30,5 +30,5 @@ media
 .idea/**/dynamic.xml
 .idea/**/ui
 
-# virtual env
+# Virtual env
 .venv
