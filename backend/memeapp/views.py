@@ -10,3 +10,7 @@ class GetMeme(generics.ListAPIView):
         data = models.Meme.objects.filter(topic=t)
 
         return data
+
+class CreateMeme(generics.ListCreateAPIView):
+    queryset = models.Meme.objects.all()
+    serializer_class = serializers.MemeSerializer
