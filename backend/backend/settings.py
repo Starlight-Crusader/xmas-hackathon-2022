@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'quizzes',
     'parseapp',
     'memeapp',
-    'students'
+    'students',
+    'helpapp'
 ]
 
 MIDDLEWARE = [

@@ -24,6 +24,7 @@ urlpatterns = [
         path('quizzes/', include('quizzes.urls')),
         path('parseapp/', include('parseapp.urls')),
         path('memeapp/', include('memeapp.urls')),
-        path('students/', include('students.urls'))
+        path('students/', include('students.urls')),
+        path('helpapp/', include('helpapp.urls'))
     ]))
 ]
