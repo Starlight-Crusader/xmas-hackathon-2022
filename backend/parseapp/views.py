@@ -4,7 +4,7 @@ from rest_framework import generics, status, response
 from rest_framework.decorators import api_view
 from parseapp import serializers
 
-@api_view(['GET'])
+@api_view(['POST'])
 def parse_command(request):
     serializer = serializers.RequestSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -36,13 +36,13 @@ def parse_command(request):
         elif tokens[1] == 'students':
             if len(tokens) <= 2:
                 return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
-            if tokens[2] in ['--add', '--delete']:
+            if tokens[2] in ['-add', '-delete']:
                 if len(tokens) > 3:
                     student_name = tokens[4]
                     return response.Response('api/students/name=' + student_name, status=status.HTTP_200_OK)
                 else:
                     return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
-            elif tokens[2] == '--killist':        
+            elif tokens[2] == '-killist':        
                 return response.Response('api/students/getstudents', status=status.HTTP_200_OK)
 
         else:
