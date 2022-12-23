@@ -4,7 +4,6 @@ from nltk.tokenize import word_tokenize
 
 from rest_framework import generics, status, response
 from rest_framework.decorators import api_view
-# Create your views here.
 
 @api_view(['POST'])
 def parse_command(request):

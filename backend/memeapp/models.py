@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class Meme(models.Model):
+    topic = models.CharField(max_length=15)
+    image_URL = models.URLField()
