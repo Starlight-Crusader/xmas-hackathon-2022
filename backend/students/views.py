@@ -29,12 +29,6 @@ def delete_student(request):
                             status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
-def list_students(request):
-    try:
-        records = models.Student.objects.all()
-    except models.Student.DoesNotExist:
-        return response.Response('User does not exist.',
-                                status=status.HTTP_400_BAD_REQUEST)
-
-    return response.Response(**serializer.data())
+class StudentsList(generics.ListAPIView):
+    queryset = models.Student.objects.all()
+    serializer_class = serializers.StudentSerializer

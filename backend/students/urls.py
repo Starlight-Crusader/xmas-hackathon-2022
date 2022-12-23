@@ -5,5 +5,5 @@ from students import views
 urlpatterns = [
     path('create', views.create_student),
     path('delete', views.delete_student),
-    path('list', views.list_students)
+    path('list', views.StudentsList.as_view())
 ]
