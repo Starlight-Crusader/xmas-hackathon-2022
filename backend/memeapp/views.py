@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from rest_framework import generics
-from memeapp import models
+from memeapp import models, serializers
 
 class GetMeme(generics.ListAPIView):
-    serializer_class = MemeSerializer
+    serializer_class = serializers.MemeSerializer
 
     def get_meme(self):
         t = self.request.query_params.get('topic')
