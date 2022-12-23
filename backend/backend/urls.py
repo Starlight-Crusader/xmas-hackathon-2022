@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include([
         path('quizzes/', include('quizzes.urls')),
-        path('parse/', views.parse_command),
-    ])
+        path('parseapp/', include('parseapp.urls'))
+    ]))
 ]

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from nltk.tokenize import word_tokenize
 from rest_framework import generics, status, response
 from rest_framework.decorators import api_view
-from parse import serializers
+from parseapp import serializers
 
 @api_view(['POST'])
 def parse_command(request):

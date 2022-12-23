@@ -39,13 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-<<<<<<< HEAD
-    'quizzes'
-=======
-    'users',
+    'quizzes',
     'parseapp',
     'memeapp'
->>>>>>> b4453d7804d8c62f1c2781cd1c38b60e77bd0e8c
 ]
 
 MIDDLEWARE = [
