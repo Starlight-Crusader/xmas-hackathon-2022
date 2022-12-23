@@ -9,7 +9,7 @@ class GetMeme(generics.ListAPIView):
         t = self.request.query_params.get('topic')
         data = models.Meme.objects.filter(topic=t).order_by('?')
 
-        return data[0]
+        return data[:1]
 
 class CreateMeme(generics.ListCreateAPIView):
     queryset = models.Meme.objects.all()
