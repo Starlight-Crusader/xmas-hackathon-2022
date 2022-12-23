@@ -1,0 +1,42 @@
+.App{
+    display: flex;
+    min-height: 100vh;
+    align-items: left;
+    justify-content: left;
+    background-color: grey;
+}
+
+.Main{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.FormInput{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: black;
+    width: 700px;
+    padding-left: 50px;
+}
+
+.OutWin{
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: white;
+    width: 700px;
+    height: 700px;
+    margin-right: 20px;
+}
+
+.FotoPlace{
+    border:1 px dolid grey;
+    border-radius: 10px;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    padding-top: 300px;
+    padding-bottom: 300px;
+}
