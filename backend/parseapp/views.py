@@ -4,7 +4,7 @@ from rest_framework import generics, status, response
 from rest_framework.decorators import api_view
 from parseapp import serializers
 
-@api_view(['POST'])
+@api_view(['GET'])
 def parse_command(request):
     serializer = serializers.RequestSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
