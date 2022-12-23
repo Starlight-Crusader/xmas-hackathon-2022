@@ -25,14 +25,14 @@ def parse_command(request):
             else:
                 number_of_questions = str(10)
 
-            return response.Response('api/quizzes/n=' + number_of_questions, status=status.HTTP_200_OK)
+            return response.Response('api/quizzes?n=' + number_of_questions, status=status.HTTP_200_OK)
         elif tokens[1] == 'meme':
             if len(tokens) > 2:
                 meme_topic = tokens[2]
             else:
                 meme_topic = 'default'
 
-            return response.Response('api/memeapp/topic=' + meme_topic, status=status.HTTP_200_OK)
+            return response.Response('api/memeapp?topic=' + meme_topic, status=status.HTTP_200_OK)
         elif tokens[1] == 'students':
             if len(tokens) <= 2:
                 return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
@@ -41,13 +41,13 @@ def parse_command(request):
                     student_name = tokens[4]
                 else:
                     return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
-                return response.Response('api/students/create/name=' + student_name, status=status.HTTP_200_OK)
+                return response.Response('api/students/create?name=' + student_name, status=status.HTTP_200_OK)
             elif tokens[2] == '-delete':
                 if len(tokens) > 3:
                     student_name = tokens[4]
                 else:
                     return response.Response('Invalid argument', status=status.HTTP_400_BAD_REQUEST)
-                return response.Response('api/students/delete/name=' + student_name, status=status.HTTP_200_OK)
+                return response.Response('api/students/delete?name=' + student_name, status=status.HTTP_200_OK)
             elif tokens[2] == '-killist':
                 return response.Response('api/students/list/', status=status.HTTP_200_OK)
 
