@@ -25,7 +25,7 @@ def parse_command(request):
             else:
                 number_of_questions = str(10)
 
-            return response.Response('api/quizzes?n=' + number_of_questions, status=status.HTTP_200_OK)
+            return response.Response('api/quizzes/create?n=' + number_of_questions, status=status.HTTP_200_OK)
         elif tokens[1] == 'meme':
             if len(tokens) > 2:
                 meme_topic = tokens[2]
