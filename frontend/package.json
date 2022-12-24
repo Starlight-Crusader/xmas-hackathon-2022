@@ -1,6 +1,11 @@
 {
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
-    "react-redux": "^8.0.5"
+    "@types/react-redux": "^7.1.24",
+    "antd": "^5.1.0",
+    "axios": "^1.2.1",
+    "react-redux": "^8.0.5",
+    "redux-toolkit": "^1.1.2",
+    "styled-components": "^5.3.6"
   }
 }

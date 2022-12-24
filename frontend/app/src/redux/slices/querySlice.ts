@@ -20,7 +20,7 @@ interface QueryState{
     loading: string;
     error: SerializedError |null;
     quiz: QuizQuestion[] | null;
-
+    
 }
 
 const initialState: QueryState = {
@@ -63,29 +63,39 @@ export const querySlice = createSlice({
    extraReducers:(builder)=>{
     builder.addCase(sendQuery.pending, (state) =>{
         state.loading = 'pending';
+        console.log('sendQuery ' + state.loading)
     }).addCase(sendQuery.fulfilled, (state, payload) =>{
         state.loading = 'fulfilled';
         state.endpoint = payload.payload;
+        console.log('sendQuery ' + state.loading)
+
         console.log(state.endpoint);
     }).addCase(sendQuery.rejected, (state, payload) =>{
         state.loading = 'rejected';
         state.error = payload.error;
+        console.log('sendQuery ' + state.loading)
+
         console.log(payload.error.message);
     }).addCase(second.pending, (state) =>{
+        console.log('second ' + state.loading)
+
         state.loading = 'pending';
     }).addCase(second.fulfilled, (state, payload) =>{
         state.loading = 'fulfilled';
+        console.log('second ' + state.loading)
+
         if(payload.payload.length > 1){
             state.quiz = payload.payload;
             console.log(payload.payload.length);
         } else if (payload.payload['image_URL'] !== null){
             state.meme = payload.payload;
+            state.quiz = null;
         }
-
-        
-        console.log(state.endpoint);
+        state.endpoint = '';
       }).addCase(second.rejected, (state, payload) =>{
         state.loading = 'rejected';
+        console.log('second ' + state.loading)
+
         state.error = payload.error;
         console.log(payload.error.message);
     })

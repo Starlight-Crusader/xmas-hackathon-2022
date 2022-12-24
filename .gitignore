@@ -32,3 +32,5 @@ media
 
 # Virtual env
 .venv
+
+node_modules
