@@ -12,13 +12,14 @@ def parse_command(request):
     try:
         command = serializer.data['command']
         tokens = word_tokenize(command)
-        print(tokens)
 
         if tokens[0] != 'vdov':
             return response.Response('Invalid shell command', status=status.HTTP_400_BAD_REQUEST)
         
         if tokens[1] == 'help':
             return response.Response('api/help', status=status.HTTP_200_OK)
+        elif tokens[1] == 'goodafternoon':
+            return response.Response('api/greetingapp/greeting/', status=status.HTTP_200_OK)
         elif tokens[1] == 'quiz':
             if len(tokens) > 2:
                 number_of_questions = tokens[2]
