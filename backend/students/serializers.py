@@ -7,4 +7,10 @@ class StudentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Student
-        fields = '__all__'
+        fields = ['id']
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data["question_text"] = instance.name
+
+        return data
