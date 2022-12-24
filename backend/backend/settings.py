@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'parseapp',
     'memeapp',
     'students',
-    'helpapp'
+    'helpapp',
+    'greetingapp'
 ]
 
 MIDDLEWARE = [

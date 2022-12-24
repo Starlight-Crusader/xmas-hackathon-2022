@@ -19,6 +19,8 @@ def parse_command(request):
         
         if tokens[1] == 'help':
             return response.Response('api/help', status=status.HTTP_200_OK)
+        elif tokens[1] == 'goodafternoon':
+            return response.Response('api/greetingapp/greeting/', status=status.HTTP_200_OK)
         elif tokens[1] == 'quiz':
             if len(tokens) > 2:
                 number_of_questions = tokens[2]
