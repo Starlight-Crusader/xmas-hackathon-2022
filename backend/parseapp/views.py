@@ -17,7 +17,7 @@ def parse_command(request):
             return response.Response('Invalid shell command', status=status.HTTP_400_BAD_REQUEST)
         
         if tokens[1] == 'help':
-            return response.Response('api/help', status=status.HTTP_200_OK)
+            return response.Response('api/helpapp/', status=status.HTTP_200_OK)
         elif tokens[1] == 'goodafternoon':
             return response.Response('api/greetingapp/greeting/', status=status.HTTP_200_OK)
         elif tokens[1] == 'quiz':
