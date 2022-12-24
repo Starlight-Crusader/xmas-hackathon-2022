@@ -12,8 +12,11 @@ def create_student(request):
         return response.Response('Something went wrong.',
                                 status=status.HTTP_400_BAD_REQUEST)
 
-    return response.Response('Successfully added a new record.',
-                            status=status.HTTP_200_OK)
+    data = {
+        "question_text": "Successfully added a new record!"
+    }
+
+    return response.Response(data)
 
 
 @api_view(['GET'])
@@ -25,8 +28,11 @@ def delete_student(request):
         return response.Response('Unable to find this record.',
                                 status=status.HTTP_400_BAD_REQUEST)
 
-    return response.Response('Successfully deleted a record.',
-                            status=status.HTTP_200_OK)
+    data = {
+        "question_text": "Successfully deleted a record!"
+    }
+
+    return response.Response(data)
 
 
 class StudentsList(generics.ListAPIView):
