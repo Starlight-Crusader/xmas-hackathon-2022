@@ -7,4 +7,10 @@ class CommandSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Command
-        fields = '__all__'
+        fields = ['id']
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data["question_text"] = instance.command_name
+
+        return data
