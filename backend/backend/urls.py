@@ -26,6 +26,6 @@ urlpatterns = [
         path('memeapp/', include('memeapp.urls')),
         path('students/', include('students.urls')),
         path('helpapp/', include('helpapp.urls')),
-        path('greeetingapp/', include('greetingapp.urls'))
+        path('greetingapp/', include('greetingapp.urls'))
     ]))
 ]

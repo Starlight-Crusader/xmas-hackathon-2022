@@ -12,7 +12,6 @@ def parse_command(request):
     try:
         command = serializer.data['command']
         tokens = word_tokenize(command)
-        print(tokens)
 
         if tokens[0] != 'vdov':
             return response.Response('Invalid shell command', status=status.HTTP_400_BAD_REQUEST)
