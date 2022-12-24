@@ -7,7 +7,10 @@ class GetMeme(generics.ListAPIView):
 
     def get_queryset(self):
         t = self.request.query_params.get('topic')
-        data = models.Meme.objects.filter(topic=t).order_by('?')
+        if(t == 'default'):
+            data = models.Meme.objects.all().order_by('?')
+        else:
+            data = models.Meme.objects.filter(topic=t).order_by('?')
 
         return data[:1]
 
